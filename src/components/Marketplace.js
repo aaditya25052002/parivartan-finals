@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 import "./Marketplace.css";
 import img from "../logo_3.png";
+import img1 from "../nft-mockup.png";
 
 export default function Marketplace() {
   const [data, updateData] = useState([]);
@@ -79,7 +80,10 @@ export default function Marketplace() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col place-items-center mt-20">
+      <div className="ml-20 mt-20">
+        <h1 className="text-style">Our Latest Collections</h1>
+      </div>
+      <div className="flex flex-col place-items-center mt-10">
         {/* <div class="wrapper">
     <div class="static-txt">   </div>
     <ul class="dynamic-txts">

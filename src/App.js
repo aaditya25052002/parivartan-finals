@@ -5,19 +5,21 @@ import Profile from "./components/Profile";
 import SellNFT from "./components/SellNFT";
 import NFTPage from "./components/NFTpage";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chatbot from "./components/Chatbot";
 
 function App() {
   return (
     <div className="container">
-      <Routes>
-        <Route path="/" element={<Marketplace />} />
-        <Route path="/nftPage" element={<NFTPage />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/sellNFT" element={<SellNFT />} />
-        <Route path="/chatbot" element={<Chatbot />} />
-      </Routes>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Marketplace />} />
+          <Route path="/nftPage" element={<NFTPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/sellNFT" element={<SellNFT />} />
+          <Route path="/chat" element={<Chatbot />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

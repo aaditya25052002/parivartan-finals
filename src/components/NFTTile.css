@@ -4,14 +4,8 @@
 }
 
 .nfttiles:hover{
-    animation: tilt .3s ease-in-out infinite;
-    
+    transform: scale(1.05);
+    /* animation-timing-function: 1s; */
+    transition-duration:0.5s;
 }
 
-@keyframes tilt {
-    0%{transform: skewY(0deg);}
-    25%{transform: skewY(.5deg);}
-    50%{transform: skewY(1deg);}
-    75%{transform: skewY(.5deg);}
-    100%{transform: skewY(0deg);}       
-}

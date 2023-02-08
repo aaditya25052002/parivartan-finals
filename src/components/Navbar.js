@@ -16,7 +16,7 @@ import { useLocation } from "react-router";
 function Navbar() {
   const [connected, toggleConnect] = useState(false);
   const location = useLocation();
-  const [currAddress, updateAddress] = useState("0x");
+  const [currAddress, updateAddress] = useState("Connect Wallet");
 
   async function getAddress() {
     const ethers = require("ethers");
@@ -28,7 +28,7 @@ function Navbar() {
 
   function updateButton() {
     const ethereumButton = document.querySelector(".enableEthereumButton");
-    ethereumButton.textContent = addr;
+    // ethereumButton.textContent = newconnect;
     ethereumButton.classList.remove("hover:bg-blue-70");
     ethereumButton.classList.remove("bg-blue-500");
     ethereumButton.classList.add("hover:bg-green-70");
@@ -133,12 +133,12 @@ function Navbar() {
           </li>
         </ul>
       </nav>
-      <div className="text-white text-bold text-right px-10 text-sm -mt-5">
+      {/* <div className="text-white text-bold text-right px-10 text-sm -mt-5">
         {currAddress !== "0x"
           ? "Connected to"
           : "Not Connected. Please login to view NFTs"}{" "}
         {currAddress !== "0x" ? currAddress.substring(0, 15) + "..." : ""}
-      </div>
+      </div> */}
     </div>
   );
 }

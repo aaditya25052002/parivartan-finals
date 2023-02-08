@@ -4,7 +4,7 @@ import MarketplaceJSON from "../Marketplace.json";
 import axios from "axios";
 import { useState } from "react";
 import NFTTile from "./NFTTile";
-import '../components/Profile.css'
+import "../components/Profile.css";
 
 export default function Profile() {
   const [data, updateData] = useState([]);
@@ -21,7 +21,11 @@ export default function Profile() {
     const addr = await signer.getAddress();
 
     //Pull the deployed contract instance
-    let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer);
+    let contract = new ethers.Contract(
+      MarketplaceJSON.address,
+      MarketplaceJSON.abi,
+      signer
+    );
 
     //create an NFT Token
     let transaction = await contract.getMyNFTs();
@@ -64,12 +68,11 @@ export default function Profile() {
 
   return (
     <div className="profileClass fl-box" style={{ "min-height": "100vh" }}>
-      <Navbar/>
+      <Navbar />
       <div className="profileClass center-box">
         <div className="flex text-center flex-col mt-11 md:text-2xl text-white">
           <div className="mb-5">
-            <h2 className="font-bold mt-5">Wallet Address</h2>
-            {address}
+            <h2 className="font-bold mt-5">Wallet Address :- {address}</h2>
           </div>
         </div>
         <div className="flex flex-row text-center justify-center mt-10 md:text-2xl text-white">
@@ -90,7 +93,9 @@ export default function Profile() {
             })}
           </div>
           <div className="mt-10 text-xl">
-            {data.length == 0 ? "Oops, No NFT data to display (Are you logged in?)" : ""}
+            {data.length == 0
+              ? "Oops, No NFT data to display (Are you logged in?)"
+              : ""}
           </div>
         </div>
       </div>

@@ -98,8 +98,8 @@ export default function SellNFT() {
   return (
     <div className="">
       <Navbar></Navbar>
-      <div className="flex flex-col place-items-center mt-10" id="nftForm">
-        <form className="bg-black shadow-md rounded px-8 pt-4 pb-8 mb-4">
+      <div className="flex flex-col place-items-center mt-5" id="nftForm">
+        <form className="bg-black shadow-pink-800 rounded px-8 pt-4 pb-8 mb-4">
           <h3 className="text-center font-bold text-pink-500	 mb-8">
             Upload your NFT to the marketplace
           </h3>
@@ -114,7 +114,7 @@ export default function SellNFT() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
-              placeholder="Axie#4563"
+              placeholder="Parivartan"
               onChange={(e) =>
                 updateFormParams({ ...formParams, name: e.target.value })
               }
@@ -134,7 +134,7 @@ export default function SellNFT() {
               rows="5"
               id="description"
               type="text"
-              placeholder="Axie Infinity Collection"
+              placeholder="More description about Collection"
               value={formParams.description}
               onChange={(e) =>
                 updateFormParams({ ...formParams, description: e.target.value })

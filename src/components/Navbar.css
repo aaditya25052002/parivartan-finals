@@ -1,7 +1,11 @@
-.navbarr{   
+.navbarr{
+    position: sticky;
     top: 0;
-    /* filter: blur(1px);
-  -webkit-filter: blur(1px); */
+    right: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(px);
+    backdrop-filter: blur(5px);
 }
 #logo-pari{
     margin-left: 0rem;

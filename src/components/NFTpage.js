@@ -18,7 +18,11 @@ export default function NFTPage(props) {
     const signer = provider.getSigner();
     const addr = await signer.getAddress();
     //Pull the deployed contract instance
-    let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer);
+    let contract = new ethers.Contract(
+      MarketplaceJSON.address,
+      MarketplaceJSON.abi,
+      signer
+    );
     //create an NFT Token
     const tokenURI = await contract.tokenURI(tokenId);
     const listedToken = await contract.getListedforToken(tokenId);
@@ -50,11 +54,17 @@ export default function NFTPage(props) {
       const signer = provider.getSigner();
 
       //Pull the deployed contract instance
-      let contract = new ethers.Contract(MarketplaceJSON.address, MarketplaceJSON.abi, signer);
+      let contract = new ethers.Contract(
+        MarketplaceJSON.address,
+        MarketplaceJSON.abi,
+        signer
+      );
       const salePrice = ethers.utils.parseUnits(data.price, "ether");
       updateMessage("Buying the NFT... Please Wait (Upto 5 mins)");
       //run the executeSale function
-      let transaction = await contract.executeSale(tokenId, { value: salePrice });
+      let transaction = await contract.executeSale(tokenId, {
+        value: salePrice,
+      });
       await transaction.wait();
 
       alert("You successfully bought the NFT!");
@@ -72,7 +82,7 @@ export default function NFTPage(props) {
     <div style={{ "min-height": "100vh" }}>
       <Navbar></Navbar>
       <div className="flex ml-20 mt-20">
-        <img src={data.image} alt="" className="w-2/5"/>
+        <img src={data.image} alt="" className="w-2/5" />
         <div className="text-xl ml-20 space-y-8 text-white shadow-2xl rounded-lg border-2 p-5">
           <div>Name: {data.name}</div>
           <div>Description: {data.description}</div>

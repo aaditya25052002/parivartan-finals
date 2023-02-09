@@ -6,6 +6,7 @@ import { useState } from "react";
 import "./Marketplace.css";
 import img from "../logo_3.png";
 import img1 from "../nft-mockup.png";
+import { useNavigate } from "react-router";
 
 export default function Marketplace() {
   const [data, updateData] = useState([]);
@@ -52,6 +53,8 @@ export default function Marketplace() {
     updateaddress(addr);
   }
 
+  const history = useNavigate();
+
   if (!dataFetched) getAllNFTs();
 
   return (
@@ -68,6 +71,12 @@ export default function Marketplace() {
           </p>
           <button className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full mt-5">
             Mint your Artwork
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5 ml-2"
+            onClick={history("/docs")}
+          >
+            Docs
           </button>
         </div>
         <div>

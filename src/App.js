@@ -7,6 +7,7 @@ import NFTPage from "./components/NFTpage";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Chatbot from "./components/Chatbot";
+import Documentation from "./components/Documentation";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/sellNFT" element={<SellNFT />} />
           <Route path="/chat" element={<Chatbot />} />
+          <Route path="/docs" element={<Documentation />} />
         </Routes>
       </Router>
     </div>

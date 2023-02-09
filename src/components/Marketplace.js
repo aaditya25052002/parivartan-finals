@@ -55,8 +55,8 @@ export default function Marketplace() {
   if (!dataFetched) getAllNFTs();
 
   return (
-    <div>
-      <Navbar></Navbar>
+    <div className="market-container">
+      <Navbar/>
       <div class="container m-auto grid grid-cols-2 mt-20">
         <div>
           <h1 className="nfttitle">

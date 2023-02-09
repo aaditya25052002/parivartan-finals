@@ -1,3 +1,8 @@
+.navbarr{   
+    top: 0;
+    /* filter: blur(1px);
+  -webkit-filter: blur(1px); */
+}
 #logo-pari{
     margin-left: 0rem;
 }
@@ -27,3 +32,7 @@
      }
 }
   
+.logo{
+    max-width: 10%;
+    max-height: 10%;
+}

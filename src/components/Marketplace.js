@@ -59,7 +59,7 @@ export default function Marketplace() {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <div className="market-container container m-auto grid grid-cols-2 mt-20">
         <div>
           <h1 className="nfttitle">
@@ -72,11 +72,14 @@ export default function Marketplace() {
           <button className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full mt-5">
             Mint your Artwork
           </button>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5 ml-2"
-            onClick={history("/docs")}
-          >
-            Docs
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5 ml-2">
+            <a
+              href="https://aadityas-organization.gitbook.io/untitled/"
+              target="blank"
+            >
+              {" "}
+              Docs
+            </a>
           </button>
         </div>
         <div>

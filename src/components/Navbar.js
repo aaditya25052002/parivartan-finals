@@ -1,7 +1,7 @@
 import logo from "../logo_3.png";
 import fullLogo from "../logo1.png";
 import "../components/Navbar.css";
-import 'flowbite';
+import "flowbite";
 
 import {
   BrowserRouter as Router,
@@ -48,6 +48,7 @@ function Navbar() {
         method: "wallet_switchEthereumChain",
         params: [{ chainId: "0x5" }],
       });
+      console.log("akash");
     }
     await window.ethereum
       .request({ method: "eth_requestAccounts" })
@@ -75,21 +76,49 @@ function Navbar() {
 
   const newconnect = currAddress.substring(0, 15) + "...";
 
-  return (   
-      <div className="navbarr">
+  return (
+    <div className="navbarr">
       <nav class="bg-transperant border-gray-200 px-2 py-2">
-  <div class="container mx-auto flex flex-wrap items-center justify-between">
-    <a href="#" className="flex logo">
-      <img src="/PARIVARTRAN.png" alt=""/>
-    </a>
-    <button data-collapse-toggle="mobile-menu" type="button" class="md:hidden ml-3 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center" aria-controls="mobile-menu-2" aria-expanded="false">
-      <span class="sr-only">Open main menu</span>
-      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-      <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-    </button>
-    <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
-      <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
-      {location.pathname === "/" ? (
+        <div class="container mx-auto flex flex-wrap items-center justify-between">
+          <a href="#" className="flex logo">
+            <img src="/PARIVARTRAN.png" alt="" />
+          </a>
+          <button
+            data-collapse-toggle="mobile-menu"
+            type="button"
+            class="md:hidden ml-3 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-lg inline-flex items-center justify-center"
+            aria-controls="mobile-menu-2"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              class="hidden w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
+            <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
+              {location.pathname === "/" ? (
                 <li className="bg-pink-700 md:bg-transparent hover:text-gray-50 text-white block pl-3 pr-4 py-2 my-2 md:text-pink-500 md:p-0 rounded">
                   <Link to="/">Marketplace</Link>
                 </li>
@@ -116,24 +145,20 @@ function Navbar() {
                   <Link to="/profile">Profile</Link>
                 </li>
               )}
-              <li>
-                <button
-                  className="enableEthereumButton bg-pink-500 hover:bg-pink-700 text-white font-bold px-4 rounded text-sm block pl-3 pr-4 py-2"
-                  onClick={connectWebsite}
-                >
+              <li onClick={connectWebsite}>
+                <button className="enableEthereumButton bg-pink-500 hover:bg-pink-700 text-white font-bold px-4 rounded text-sm block pl-3 pr-4 py-2">
                   {connected ? newconnect : "Connect Wallet"}
                 </button>
               </li>
-      </ul>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
-  </div>
-</nav>
-</div>
   );
 }
 
 export default Navbar;
-
 
 /* <nav className="w-screen">
         <ul className="flex items-end justify-between py-3 bg-transparent text-white pr-5 navv">

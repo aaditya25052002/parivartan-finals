@@ -1,7 +1,7 @@
 import Navbar from "./Navbar";
 import axie from "../tile.jpeg";
 import { useLocation, useParams } from "react-router-dom";
-import MarketplaceJSON from "../Marketplace.json";
+import MarketplaceJSON from "../Certify.json";
 import axios from "axios";
 import { Component, useState } from "react";
 
@@ -59,11 +59,11 @@ export default function NFTPage(props) {
         MarketplaceJSON.abi,
         signer
       );
-      const salePrice = ethers.utils.parseUnits(data.price, "ether");
+      // const salePrice = ethers.utils.parseUnits(data.price, "ether");
       updateMessage("Buying the NFT... Please Wait (Upto 5 mins)");
       //run the executeSale function
       let transaction = await contract.executeSale(tokenId, {
-        value: salePrice,
+        value: 0,
       });
       await transaction.wait();
 

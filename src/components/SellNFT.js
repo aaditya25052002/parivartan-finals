@@ -100,15 +100,15 @@ export default function SellNFT() {
       <Navbar></Navbar>
       <div className="flex flex-col place-items-center mt-5" id="nftForm">
         <form className="bg-black shadow-pink-800 rounded px-8 pt-4 pb-8 mb-4">
-          <h3 className="text-center font-bold text-pink-500	 mb-8">
-            Upload your NFT to the marketplace
+          <h3 className="text-center font-bold text-white	 mb-8">
+            Upload the Certificate
           </h3>
           <div className="mb-4">
             <label
-              className="block text-pink-500	 text-sm font-bold mb-2"
+              className="block text-white	 text-sm font-bold mb-2"
               htmlFor="name"
             >
-              NFT Name
+              Certificate Title
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -123,10 +123,10 @@ export default function SellNFT() {
           </div>
           <div className="mb-6">
             <label
-              className="block text-pink-500	 text-sm font-bold mb-2"
+              className="block text-white	 text-sm font-bold mb-2"
               htmlFor="description"
             >
-              NFT Description
+              Certificate Description
             </label>
             <textarea
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -141,30 +141,13 @@ export default function SellNFT() {
               }
             ></textarea>
           </div>
-          <div className="mb-6">
-            <label
-              className="block text-pink-500	 text-sm font-bold mb-2"
-              htmlFor="price"
-            >
-              Price (in ETH)
-            </label>
-            <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              type="number"
-              placeholder="Min 0.01 ETH"
-              step="0.01"
-              value={formParams.price}
-              onChange={(e) =>
-                updateFormParams({ ...formParams, price: e.target.value })
-              }
-            ></input>
-          </div>
+
           <div>
             <label
-              className="block text-pink-500	 text-sm font-bold mb-2"
+              className="block text-white text-sm font-bold mb-2"
               htmlFor="image"
             >
-              Upload Image
+              Upload Certificate
             </label>
             <input type={"file"} onChange={OnChangeFile}></input>
           </div>
@@ -172,9 +155,9 @@ export default function SellNFT() {
           <div className="text-green text-center">{message}</div>
           <button
             onClick={listNFT}
-            className="font-bold mt-10 w-full bg-pink-500 text-white rounded p-2 shadow-lg"
+            className="font-bold mt-10 w-full bg-green-500 text-white rounded p-2 shadow-lg"
           >
-            List NFT
+            List Certificate
           </button>
         </form>
       </div>

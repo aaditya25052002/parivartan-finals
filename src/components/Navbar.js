@@ -81,7 +81,7 @@ function Navbar() {
       <nav class="bg-transperant border-gray-200 px-2 py-2">
         <div class="container mx-auto flex flex-wrap items-center justify-between">
           <a href="#" className="flex logo">
-            <img src="/PARIVARTRAN.png" alt="" />
+            <h4 className="font-semibold text-white">BlockProof</h4>
           </a>
           <button
             data-collapse-toggle="mobile-menu"
@@ -119,34 +119,31 @@ function Navbar() {
           <div class="hidden md:block w-full md:w-auto" id="mobile-menu">
             <ul class="flex-col md:flex-row flex md:space-x-8 mt-4 md:mt-0 md:text-sm md:font-medium">
               {location.pathname === "/" ? (
-                <li className="bg-pink-700 md:bg-transparent hover:text-gray-50 text-white block pl-3 pr-4 py-2 my-2 md:text-pink-500 md:p-0 rounded">
-                  <Link to="/">Marketplace</Link>
+                <li className="bg-white-700 md:bg-transparent hover:text-gray-50 text-white block pl-3 pr-4 py-2 my-2 md:text-white-500 md:p-0 rounded">
+                  <Link to="/">Home</Link>
                 </li>
               ) : (
-                <li className="bg-pink-700 hover:bg-gray-50 md:bg-transparent text-white block pl-3 my-2 pr-4 py-2 md:text-pink-500 md:p-0 rounded">
-                  <Link to="/">Marketplace</Link>
+                <li className="bg-white-700 hover:bg-gray-50 md:bg-transparent text-white block pl-3 my-2 pr-4 py-2 md:text-white-500 md:p-0 rounded">
+                  <Link to="/">Home</Link>
                 </li>
               )}
-              {location.pathname === "/sellNFT" ? (
-                <li className="text-white hover:bg-gray-50 border-b border-gray-100 my-2 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-pink-700 md:p-0">
-                  <Link to="/sellNFT">List My NFT</Link>
+
+              {currAddress === "0x3a3121Ea9A9f94c5fa5E607f722EDdc7a9a97010" ? (
+                <li className="text-white hover:bg-gray-50 border-b border-gray-100 my-2 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-whtie-700 md:p-0">
+                  <Link to="/sellNFT">List Certificate</Link>
                 </li>
-              ) : (
-                <li className="text-white hover:bg-gray-50 border-b border-gray-100 my-2 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-pink-700 md:p-0">
-                  <Link to="/sellNFT">List My NFT</Link>
-                </li>
-              )}
+              ) : null}
               {location.pathname === "/profile" ? (
-                <li className="text-white hover:bg-gray-50 border-b border-gray-100 my-2 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-pink-700 md:p-0">
-                  <Link to="/profile">Profile</Link>
+                <li className="text-white hover:bg-gray-50 border-b border-gray-100 my-2 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white-700 md:p-0">
+                  <Link to="/profile">View Certificate</Link>
                 </li>
               ) : (
-                <li className="text-white hover:bg-gray-50 border-b border-gray-100 my-2 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-pink-700 md:p-0">
-                  <Link to="/profile">Profile</Link>
+                <li className="text-white hover:bg-gray-50 border-b border-gray-100 my-2 md:hover:bg-transparent md:border-0 block pl-3 pr-4 py-2 md:hover:text-white-700 md:p-0">
+                  <Link to="/profile">View Certificate</Link>
                 </li>
               )}
               <li onClick={connectWebsite}>
-                <button className="enableEthereumButton bg-pink-500 hover:bg-pink-700 text-white font-bold px-4 rounded text-sm block pl-3 pr-4 py-2">
+                <button className="enableEthereumButton bg-white-500 hover:bg-pink-700 text-white font-bold px-4 rounded text-sm block pl-3 pr-4 py-2">
                   {connected ? newconnect : "Connect Wallet"}
                 </button>
               </li>

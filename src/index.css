@@ -12,8 +12,9 @@ body {
   /*font-family: 'M PLUS 1p', sans-serif;*/
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./spectrum-gradient.png');
-  background-size: 200% 200%;
+  background-image: url('https://i.gifer.com/D4Ll.gif');
+  
+  background-size: 100% 70%;
   animation-duration: 3s;
   animation-timing-function: linear;
   animation-delay: 0s;
@@ -23,6 +24,7 @@ body {
   animation-play-state: running;
   animation-name: gradientTransform;
   background-repeat: no-repeat;
+  background-color: black;
 }
 
 code {

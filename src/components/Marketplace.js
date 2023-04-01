@@ -63,27 +63,21 @@ export default function Marketplace() {
       <div className="market-container container m-auto grid grid-cols-2 mt-20">
         <div>
           <h1 className="nfttitle">
-            Buy, Sell and Explore <br></br>Digital Arts and <br></br>{" "}
-            <span className="blurtext">NFTs</span> Collections
+            Create,Mint and Explore <br></br>Digital Certificates and <br></br>{" "}
+            <span className="blurtext">NFTs</span> of legitimate.
           </h1>
           <p class="text-gray-500 font-semibold text-sm mt-3">
-            Mint and collect the NFTs around.
+            Creating certificates as NFTs, A new form of art, a digital
+            masterpiece. <br />
+            Tokenized, unique, and forever, A blockchain treasure, an innovative
+            endeavor.
           </p>
-          <button className="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full mt-5">
-            Mint your Artwork
-          </button>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-5 ml-2">
-            <a
-              href="https://aadityas-organization.gitbook.io/untitled/"
-              target="blank"
-            >
-              {" "}
-              Docs
-            </a>
+          <button className="btn-don text-font-bold py-2 px-4 rounded-full mt-5">
+            Mint Certificates
           </button>
         </div>
-        <div>
-          <img className="logo-img" src={img} alt="" srcset="" />
+        <div className="back">
+          <img className="logo-img" src="" alt="" srcset="" />
           <p className="border-hero">
             <span className="text-white">You:- </span>
             <span className="text-gray-500 font-semibold text-sm mt-3">
@@ -93,7 +87,7 @@ export default function Marketplace() {
         </div>
       </div>
       <div className="ml-20 mt-20">
-        <h1 className="text-style">Our Latest Collections</h1>
+        <h1 className="text-style">Claim your certificates</h1>
       </div>
       <div className="flex flex-col place-items-center mt-10">
         {/* <div class="wrapper">

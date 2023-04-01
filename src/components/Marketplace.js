@@ -1,6 +1,6 @@
 import Navbar from "./Navbar";
 import NFTTile from "./NFTTile";
-import MarketplaceJSON from "../Marketplace.json";
+import MarketplaceJSON from "../Certify.json";
 import axios from "axios";
 import { useState } from "react";
 import "./Marketplace.css";
@@ -34,9 +34,8 @@ export default function Marketplace() {
         let meta = await axios.get(tokenURI);
         meta = meta.data;
 
-        let price = ethers.utils.formatUnits(i.price.toString(), "ether");
+        // let price = ethers.utils.formatUnits(i.price.toString(), "ether");
         let item = {
-          price,
           tokenId: i.tokenId.toNumber(),
           seller: i.seller,
           owner: i.owner,

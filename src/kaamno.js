@@ -1,8 +1,6 @@
 //require('dotenv').config();
-import store, { updateImage } from "./state";
 const key = "0621a0687d8556fe14dd";
-const secret =
-  "9aef9ce0e87c9510b3f0aca8541207427549248325a4fffcefbead4bac4b309f";
+const secret = "9aef9ce0e87c9510b3f0aca8541207427549248325a4fffcefbead4bac4b309f";
 
 const axios = require("axios");
 const FormData = require("form-data");
@@ -20,8 +18,7 @@ export const uploadJSONToIPFS = async (JSONBody) => {
     .then(function (response) {
       return {
         success: true,
-        pinataURL:
-          "https://gateway.pinata.cloud/ipfs/" + response.data.IpfsHash,
+        pinataURL: "https://gateway.pinata.cloud/ipfs/" + response.data.IpfsHash,
       };
     })
     .catch(function (error) {
@@ -77,15 +74,9 @@ export const uploadFileToIPFS = async (file) => {
     })
     .then(function (response) {
       console.log("image uploaded", response.data.IpfsHash);
-      store.dispatch(
-        updateImage({
-          imageUrl: `"https://gateway.pinata.cloud/ipfs/" + ${response.data.IpfsHash}`,
-        })
-      ); //state update
       return {
         success: true,
-        pinataURL:
-          "https://gateway.pinata.cloud/ipfs/" + response.data.IpfsHash,
+        pinataURL: "https://gateway.pinata.cloud/ipfs/" + response.data.IpfsHash,
       };
     })
     .catch(function (error) {

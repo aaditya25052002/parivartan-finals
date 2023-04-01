@@ -1,14 +1,15 @@
 import Navbar from "./Navbar";
 import { useState } from "react";
 import { uploadFileToIPFS, uploadJSONToIPFS } from "../pinata";
-import Marketplace from "../Marketplace.json";
+import Marketplace from "../Certify.json";
 import { useLocation } from "react-router";
+import store, { updateEmail } from "../state";
 
 export default function SellNFT() {
   const [formParams, updateFormParams] = useState({
     name: "",
     description: "",
-    price: "",
+    email: "",
   });
   const [fileURL, setFileURL] = useState(null);
   const ethers = require("ethers");
@@ -33,14 +34,13 @@ export default function SellNFT() {
 
   //This function uploads the metadata to IPFS
   async function uploadMetadataToIPFS() {
-    const { name, description, price } = formParams;
+    const { name, description } = formParams;
     //Make sure that none of the fields are empty
-    if (!name || !description || !price || !fileURL) return;
+    if (!name || !description || !fileURL) return;
 
     const nftJSON = {
       name,
       description,
-      price,
       image: fileURL,
     };
 
@@ -75,19 +75,17 @@ export default function SellNFT() {
       );
 
       //massage the params to be sent to the create NFT request
-      const price = ethers.utils.parseUnits(formParams.price, "ether");
-      let listingPrice = await contract.getListPrice();
-      listingPrice = listingPrice.toString();
+      // const price = ethers.utils.parseUnits(formParams.price, "ether");
+      // let listingPrice = await contract.getListPrice();
+      // listingPrice = listingPrice.toString();
 
       //actually create the NFT
-      let transaction = await contract.createToken(metadataURL, price, {
-        value: listingPrice,
-      });
+      let transaction = await contract.createToken(metadataURL, 0);
       await transaction.wait();
 
       alert("Successfully listed your NFT!");
       updateMessage("");
-      updateFormParams({ name: "", description: "", price: "" });
+      updateFormParams({ name: "", description: "" });
       window.location.replace("/");
     } catch (e) {
       alert("Upload error" + e);
@@ -141,7 +139,26 @@ export default function SellNFT() {
               }
             ></textarea>
           </div>
-          <div className="mb-6">
+          <div className="mb-4">
+            <label
+              className="block text-pink-500	 text-sm font-bold mb-2"
+              htmlFor="name"
+            >
+              Email id
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="email"
+              placeholder="johnDoe@pariartan.com"
+              onChange={(e) => {
+                updateFormParams({ ...formParams, email: e.target.value });
+                store.dispatch(updateEmail({ email: formParams.email }));
+              }}
+              value={formParams.email}
+            ></input>
+          </div>
+          {/* <div className="mb-6">
             <label
               className="block text-pink-500	 text-sm font-bold mb-2"
               htmlFor="price"
@@ -158,7 +175,7 @@ export default function SellNFT() {
                 updateFormParams({ ...formParams, price: e.target.value })
               }
             ></input>
-          </div>
+          </div> */}
           <div>
             <label
               className="block text-pink-500	 text-sm font-bold mb-2"
